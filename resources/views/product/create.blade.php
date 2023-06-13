@@ -3,12 +3,12 @@
 @section('title', 'Create Product')
 
 @section('main')
-    <form action="{{ route('product.store') }}" method="POST">
+    <form action="{{ route('product.store') }}" method="POST" class="max-w-xl border mx-auto p-4">
         @csrf
-        <x-forms.input name="code" label="Codigo do produto"></x-forms.input>
-        <x-forms.input name="name" label="Nome"></x-forms.input>
-        <x-forms.input name="image_url" label="Image Url"></x-forms.input>
-        <x-forms.input name="price" label="Price"></x-forms.input>
-        <button type="submit">Create</button>
+        <x-forms.input type="text" name="code" label="Codigo do produto"></x-forms.input>
+        <x-forms.input type="text" name="name" label="Nome"></x-forms.input>
+        <x-forms.input type="url" name="image_url" label="Image Url"></x-forms.input>
+        <x-forms.input type="number" name="price" label="Price"></x-forms.input>
+        <button type="submit" class="w-full bg-blue-950 text-white mt-8 py-3 rounded-md">Create</button>
     </form>
 @endsection
