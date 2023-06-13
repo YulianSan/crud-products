@@ -2,6 +2,10 @@
 
 @section('title', 'Products')
 
+@push('scripts')
+    @vite('resources/js/model.js')
+@endpush
+
 @section('main')
     <section class="max-w-5xl mx-auto">
         <header class="flex justify-between mb-10 items-center">
@@ -23,7 +27,7 @@
             </thead>    
             <tbody>
                 @foreach($products as $product)
-                <x-tables.row-product :product="$product"></x-tables.row-product>
+                    <x-tables.row-product :product="$product"></x-tables.row-product>
                 @endforeach
             </tbody>
         </table>

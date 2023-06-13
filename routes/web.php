@@ -14,4 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::resource('', ProductController::class, ['names' => 'product']);
+Route::resource('', ProductController::class, ['names' => 'product'])->parameters([
+    ''=> 'product:code'
+]);

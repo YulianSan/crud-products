@@ -13,7 +13,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::select('name', 'image_url', 'code', 'price')->get();
+        // $products = Product::select('name', 'image_url', 'code', 'price')->get();
+        $products = Product::all();
         return view('product.index', compact('products'));
     }
 
@@ -55,7 +56,7 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        //
+        return response('oi');
     }
 
     /**
@@ -71,6 +72,7 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        //
+        $product->delete();
+        return redirect()->route('product.index');
     }
 }
