@@ -12,6 +12,8 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body>
-        @yield('main')
+        <main>
+            @yield('main')
+        </main>
     </body>
 </html>
