@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class StoreProductRequest extends FormRequest
 {
@@ -24,7 +25,16 @@ class StoreProductRequest extends FormRequest
         return [
             'name' => 'required|string|max:255',
             'code' => 'required|string|unique:products|max:255',
-            'image_url' => 'required|string',
+            'image_url' => [
+                'required',
+                'url',
+                function ($attribute, $value, $fail) {
+                    $imageData = @getimagesize($value);
+                    if (!is_array($imageData)) {
+                        $fail('The URL does not point to a valid image.');
+                    }
+                }
+            ],
             'price' => 'required|numeric'
         ];
     }
