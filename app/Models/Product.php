@@ -10,4 +10,8 @@ class Product extends Model
     use HasFactory;
 
     protected $fillable = ['name', 'code', 'image_url', 'price'];
+    
+    public function getRouteKeyName(){
+        return 'code';
+    }
 }

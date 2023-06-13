@@ -16,5 +16,6 @@
         <main class="text-blue-950 mt-5">
             @yield('main')
         </main>
+        @stack('scripts')
     </body>
 </html>
