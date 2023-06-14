@@ -4,7 +4,7 @@
         type="{{ $type }}" 
         id="{{ $name }}" 
         name="{{ $name }}" 
-        value="{{ @old($name) }}" 
+        value="{{ @old($name) ?? $value }}" 
         class="border bg-stone-100 w-full px-2 py-2 rounded-md"
         required
         @if($type == 'number') 
