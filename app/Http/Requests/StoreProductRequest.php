@@ -27,7 +27,6 @@ class StoreProductRequest extends FormRequest
             'code' => 'required|string|unique:products|max:255',
             'image_url' => [
                 'required',
-                'url',
                 function ($attribute, $value, $fail) {
                     $imageData = @getimagesize($value);
                     if (!is_array($imageData)) {
