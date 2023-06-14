@@ -8,9 +8,12 @@
 
 @section('main')
     <section class="max-w-5xl mx-auto">
-        <header class="flex justify-between mb-10 items-center">
+        <header class="flex justify-between mb-10 items-center flex-col sm:flex-row">
             <h1 class="text-5xl font-bold">Products</h1>
-            <a href="{{ route('product.create') }}"class="bg-green-500 text-white relative px-4 py-3 rounded-md font-bold">
+            <a 
+                href="{{ route('product.create') }}"
+                class="bg-green-500 text-white 
+                    relative px-4 py-3 rounded-md font-bold">
                 <i class="fa-solid fa-plus mx-2"></i>
                 Add Products
             </a>

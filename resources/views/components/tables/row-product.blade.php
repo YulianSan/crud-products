@@ -1,14 +1,15 @@
 <tr class="border">
-    <td class="p-4">{{ $product->code }}</td>
-    <td class="p-4">{{ $product->name }}</td>
+    <x-tables.cell-product :value="$product->code"></x-tables.cell-product>
+    <x-tables.cell-product :value="$product->name"></x-tables.cell-product>
     <td>
         <img 
             src="{{ $product->image_url }}" 
             alt="{{ $product->name }}"
-            class="object-cover w-16 aspect-square"/>
+            class="object-contain w-16 aspect-square"/>
     </td>
-    <td class="p-4">{{ $product->price }}</td>
-    <td class="p-4 space-x-1">
+    <x-tables.cell-product :value="$product->price"></x-tables.cell-product>
+
+    <td class="p-4 space-x-0 sm:space-x-1 sm:space-y-0">
         <a href="{{ route('product.destroy', $product) }}" class="delete" data-token="{{ csrf_token() }}">
             <i class="
                 fa-solid fa-trash 
