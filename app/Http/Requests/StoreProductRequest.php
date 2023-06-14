@@ -24,7 +24,7 @@ class StoreProductRequest extends FormRequest
     {
         return [
             'name' => 'required|string|max:255',
-            'code' => 'required|string|unique:products|max:255',
+            'code' => 'required|alpha_num|unique:products|max:255',
             'image_url' => [
                 'required',
                 function ($attribute, $value, $fail) {
