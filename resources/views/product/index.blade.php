@@ -26,9 +26,17 @@
                 </tr>
             </thead>    
             <tbody>
-                @foreach($products as $product)
+                @forelse($products as $product)
                     <x-tables.row-product :product="$product"></x-tables.row-product>
-                @endforeach
+                @empty
+                    <tr>
+                        <td colspan="5" class="text-center p-3">
+                            <span class="text-xl font-light">
+                                No product found
+                            </span>
+                        </td>
+                    </tr>
+                @endforelse
             </tbody>
         </table>
     </section>
