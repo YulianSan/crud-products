@@ -7,6 +7,9 @@
 @endpush
 
 @section('main')
+    @if(session('message'))
+        <x-global.message :message="session('message')"></x-global.message>
+    @endif
     <section class="max-w-5xl mx-auto">
         <header class="flex justify-between mb-10 items-center flex-col sm:flex-row">
             <h1 class="text-5xl font-bold">Products</h1>
