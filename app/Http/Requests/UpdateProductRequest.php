@@ -28,7 +28,7 @@ class UpdateProductRequest extends FormRequest
             'name' => 'required|string|max:255',
             'code' => [
                 'required',
-                'string',
+                'alpha_num',
                 'max:255',
                 Rule::unique('products')->ignore($product_code, 'code')
             ],

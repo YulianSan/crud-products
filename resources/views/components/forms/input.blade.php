@@ -12,9 +12,9 @@
             min="0"
         @endif />
         
-    <p>
         @error($name)
-            <div class="text-red-500">{{ $message }}</div>
+            <p class="text-red-500">
+                {{ $message }}
+            </p>
         @enderror
-    </p>
 </div>
