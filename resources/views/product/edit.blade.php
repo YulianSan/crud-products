@@ -8,8 +8,16 @@
         @method('PUT')
         <x-forms.input 
             type="text" 
+            name="code" 
+            label="Identification code"
+            :value="$product->code">
+
+        </x-forms.input>
+
+        <x-forms.input 
+            type="text" 
             name="name" 
-            label="Nome"
+            label="Name"
             :value="$product->name">
         </x-forms.input>
         

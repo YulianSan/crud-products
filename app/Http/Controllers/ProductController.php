@@ -62,9 +62,18 @@ class ProductController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Product $product)
+    public function update(StoreProductRequest $request, Product $product)
     {
-        //
+        $product->update($request->only([
+            'name',
+            'image_url',
+            'price',
+            'code'
+        ]));
+
+        return redirect()
+            ->route('product.index')
+            ->with('message', 'Success in changing the product');
     }
 
     /**
